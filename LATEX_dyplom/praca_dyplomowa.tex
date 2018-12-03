@@ -1,0 +1,243 @@
+\documentclass[a4paper,12pt,twoside,openany]{report}
+%
+% Wzorzec pracy dyplomowej
+% J. Starzynski (jstar@iem.pw.edu.pl) na podstawie pracy dyplomowej
+% mgr. inż. Błażeja Wincenciaka
+% Wersja 0.1 - 8 października 2016
+%
+\usepackage{polski}
+\usepackage{helvet}
+\usepackage[T1]{fontenc}
+\usepackage{anyfontsize}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[polish]{babel}
+\usepackage{subfigure}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+\usepackage{indentfirst}
+\usepackage[pdftex]{hyperref}
+
+
+% rozmaite polecenia pomocnicze
+% gdzie rysunki?
+\newcommand{\ImgPath}{.}
+
+% oznaczenie rzeczy do zrobienia/poprawienia
+\newcommand{\TODO}{\textbf{TODO}}
+
+
+% wyroznienie slow kluczowych
+\newcommand{\tech}{\texttt}
+
+% na oprawe (1.0cm - 0.7cm)*2 = 0.6cm
+% na oprawe (1.1cm - 0.7cm)*2 = 0.8cm
+%  oddsidemargin lewy margines na nieparzystych stronach
+% evensidemargin lewy margines na parzystych stronach
+\def\oprawa{1.05cm}
+\addtolength{\oddsidemargin}{\oprawa}
+\addtolength{\evensidemargin}{-\oprawa}
+
+% table span multirows
+\usepackage{multirow}
+\usepackage{enumitem}	% enumitem.pdf
+\setlist{listparindent=\parindent, parsep=\parskip} % potrzebuje enumitem
+
+%%%%%%%%%%%%%%% Dodatkowe Pakiety %%%%%%%%%%%%%%%%%
+\usepackage{prmag2017}   % definiuje komendy opieku,nrindeksu, rodzaj pracy, ...
+
+
+%%%%%%%%%%%%%%% Strona Tytułowa %%%%%%%%%%%%%%%%%
+\title{Badanie algorytmów \linebreak[1]do~porównywania stylów tekstów w języku polskim}
+
+% autor
+\author{Szymon Masłowski}
+\nrindeksu{271070}
+
+
+\opiekun{dr inż. Grzegorz Sarwas}
+\terminwykonania{12 Grudnia 2012} % data na oświadczeniu o samodzielności
+\rok{2023}
+
+
+% Podziekowanie - opcjonalne
+\podziekowania{\input{podziekowania.tex}}
+
+% To sa domyslne wartosci
+% - mozna je zmienic, jesli praca jest pisana gdzie indziej niz w ZETiIS
+% - mozna je wyrzucic jesli praca jest pisana w ZETiIS
+%\miasto{Warszawa}
+%\uczelnia{POLITECHNIKA WARSZAWSKA}
+%\wydzial{WYDZIAŁ ELEKTRYCZNY}
+%\instytut{INSTYTUT STEROWANIA\linebreak[1] I~ELEKTRONIKI PRZEMYSŁOWEJ}
+% \zaklad{ZAKŁAD STEROWANIA}
+%\kierunekstudiow{INFORMATYKA}
+
+% domyslnie praca jest inzynierska, ale po odkomentowaniu ponizszej linii zrobi sie magisterska
+%\pracamagisterska
+%%% koniec od P.W
+
+\opinie{%
+  \input{opiniaopiekuna.tex}
+  \newpage
+  \input{recenzja.tex}
+}
+
+\streszczenia{
+  \input{streszczenia.tex}
+}
+
+\begin{document}
+\maketitle
+
+%-----------------
+% Wstęp
+%-----------------
+\chapter{Wstęp}
+
+Od kiedy człowiek zapisuje swoje myśli na świecie utrwalane jest coraz więcej danych. Pisane są listy, książki i krótkie wiadomości. Każdy z tych dzieł ma swojego autora, choć nie zawsze jest on znany. Niemniej dzięki uważnej obserwacji można ustalić kto jest autorem tekstu, jeżeli posiadamy inne do porównania. Pisanie, podobnie jak mowa czy każde działanie, które człowiek podejmuje, jest pod wpływem osobistego zachowania--stylu. Na podstawie sprawdzania stylu można przypisać autorstwo starożytnych tekstów, których autorzy mogli być zmieniani, bądź pominięci, albo odnaleźć autora anonimowego terrorystycznego manifestu. 
+Celem tej pracy jest poruszenie tematu takiego automatycznego rozpoznawania tekstów, które napisane są w języku polskim. Tworzy to specyficzne warunki, w odróżnieniu od np. języka angielskiego. Chciałbym sprawdzić czy i z jaką pewnością można określić autora tekstu dodając go do zbioru kilku znanych autorów.
+\TODO powołać się na jakąś bibliografię
+
+
+\chapter{Wprowadzenie do problematyki porównywania tekstów}
+
+\section{NLP}
+Pojęciem NLP (ang. Natural Language Processing) określa się zbiór technik komputerowych służących do analizy i reprezentacji tekstów występujących na poziomie analizy lingwistycznej w celu uzyskania sposobu przetwarzania języka przypominającego ludzki w określonym zakresie zadań i zastosowań. - Soldacki
+\url{'https://pl.wikipedia.org/wiki/Przetwarzanie_języka_naturalnego'}
+	
+\section{Budowa zdania}
+Tekst składa się ze znaków, tworzących słowa, składających się na zdania. Za Słownikiem Języka Polskiego, to 
+\begin{enumerate}
+	\item «myśl wyrażona słowami»
+	\item "«zespół wyrazów powiązanych zależnościami gramatycznymi i zawierający orzeczenie»"
+\end{enumerate}
+\url{'https://encenc.pl/budowa-zdania/'}
+\url{'https://pl.wikipedia.org/wiki/Szyk_wyrazów'}
+\section{Klasyfikacja języków naturalnych}
+\section{Styl tekstu}
+Każdy człowiek jest inny, ze względu na swoje DNA, środowisko i temperament. To wszystko rzutuje na jego działania, zarówno rodzaj jak i sposób ich wykonania. Każda czynność, którą wykonuje człowiek obarczona podpisem wykonawcy, który jest mniej lub bardziej wyraźny. Niemniej czynności przez nas wykonywane są robione na nasz własny sposób. 
+Tekst, który zapisujemy jest odbiciem naszego sposobu myślenia, więc rzutuje to na przykład na użyte słownictwo, czy sposób budowania zdań.
+Cechy, które chcę użyć w pracy to:
+\begin{itemize}
+\item kolejność części mowy
+
+Dzięki temu, że język polski jest językiem fleksyjnym, kolejność słów może ulegać znacznej zmianie, bez zmiany znaczenia zdania. Więc stała kolejność części zdania może być cechą charakterystyczną
+
+\item zbiór słów - wektor binarny?
+
+Ile różnych słów występuje, jak bogate słownictwo jest wykorzystywane. IDF do porównania jak bardzo różne od codziennego słownictwa jest to użyte w tekście.
+\item złożoność zdań - ile takich zdań występuje? 
+
+Czy zdania są proste, czy wielokrotnie złożone. Czy dzieje się to często, czy każde ze zdań jest takie.
+\item Statystyka zdania/słów
+	\begin{enumerate}
+	\item Ile słów/zdanie 
+	\item Jak długie słowa(znaki/sylaby)
+	\item Ile słów krótkich <= 3 znaki
+	\item Ile słów długich >= 7 znaków
+	\item Monosylabowe słowa (1 sylaba)
+	\item Wielosylabowe słowa (>= 3 sylaby)
+	\item Najdłuższe zdanie (ilość słów)
+	\item Najdłuższe słowo (ilość znaków, ilość sylab)
+	\end{enumerate}
+\item N-gramy literowe i słowne
+N-gram jest ciągiem n elementów. Tworząc 2-gramy ze zdania \textit{Niezmiennik pętli jest techniką dowodzenia poprawności algorytmów.} Otrzymamy następujące 2-gramy:
+\begin{itemize}
+	\item Niezmiennik -- pętli
+	\item pętli -- jest
+	\item jest -- techniką
+	\item etc.
+W przypadku n-gramów literowych, zamiast słów używamy następujących po sobie liter. Ta cecha może mieć znaczenie w przypadku, kiedy autor ma jakieś problemy z wymową i naturalnie przez to nie będzie używał pewnego zakresu słów. 
+\end{itemize}
+\item (Odwrotna) Częstotliwość słów
+
+Mówi nam o tym, jak szerokiego zasobu słów używa autor tekstu i w oparciu o korpus wzorcowy, jak ma się to do zwyczajów piśmienniczych danego czasu.
+Odwrotna częstotliwość słów ( zwana dalej z ang. IDF --\textit{inversed document frequency }) 
+\item Kwestia podstawowych form i przyrostów (archaizmy mają inne "rostki")
+\item Indeksy czytelności tekstu
+
+Te cechy są pośrednimi wskaźnikami, które będą ilościowym wyznacznikiem czy tekst jest "łatwy" czy "trudny" w odbiorze i czytaniu. 
+	\begin{enumerate}
+	\item SMOG
+	
+	\url{'https://en.wikipedia.org/wiki/SMOG'}
+	\item Indeks czytelności Flescha-Kincaida
+	
+	\url{'https://en.wikipedia.org/wiki/Flesch-Kincaid_readability_tests'}
+	\item Linsear Write
+	
+	\url{'https://en.wikipedia.org/wiki/Linsear_Write	'}
+	\item Lix
+	
+	\url{'https://en.wikipedia.org/wiki/Lix_(readability_test)'}
+	\end{enumerate}
+\end{itemize} 	
+	
+	
+\section{Analiza morfologiczna}
+https://core.ac.uk/download/pdf/11337572.pdf - Bień
+\section{Analiza syntaktyczna}
+\url{'http://bazhum.muzhp.pl/media//files/Prace_Jezykoznawcze/Prace_Jezykoznawcze-r2008-t10/Prace_Jezykoznawcze-r2008-t10-s187-200/Prace_Jezykoznawcze-r2008-t10-s187-200.pdf'} ??
+\section{Klasyfikacja}
+In classification, inputs are divided into two or more classes, and the learner must produce a model that assigns unseen inputs to one or more (multi-label classification) of these classes. This is typically tackled in a supervised way. Spam filtering is an example of classification, where the inputs are email (or other) messages and the classes are "spam" and "not spam". - Richard O. Duda, Peter E. Hart, David G. Stork (2001) Pattern classification (2nd edition), Wiley, New York, ISBN 0-471-05669-3. Z wiki ^^
+
+\chapter{Przegląd dostępnych rozwiązań}
+
+\section{Rozprawa doktorska z EITI}
+\section{OSA}
+\section{Bank ING i czytelność dokumentóW}
+\section{Użyte technologie}
+\subsection{Python}
+\subsection{Biblioteki}
+
+\chapter{Model klasyfikacji}
+\section{Warunki}
+\subsection{Ile użytych tekstów/autorów}
+\section{Metody porównywania obiektów}
+\subsection{SVM}
+
+\section{Budowa i opis algorytmu}
+\subsection{Przygotowanie danych}
+\subsection{Struktura danych}
+\subsection{Cechy}
+\subsection{Algorytmy użyte do ekstrakcji cech}
+\subsection{Klasyfikacja}
+
+\chapter{Testy i wyniki}
+\section{Przypadki testowe}
+\section{Cel testów}
+\section{Wyniki}
+
+\chapter{Wyniki}
+\section{Czy było warto?}
+\section{Podjęte decyzje}
+\subsubsection{Klasyfikator}
+Do rozwiązania zagadnienia klasyfikacji można użyć wielu rozwiązań, takich jak: sieci neuronowe, klasyfikator Bayesowski, drzewo decyzyjne, metoda najbliższych sąsiadów czy w końcu SVM. Ze względu na rozmiar pracy, postanowiłem nie sprawdzać wpływu różnych klasyfikatorów na dokładność wyniku. Jak pokazują inne prace, użycie tego klasyfikatora zapewniało najdokładniejsze wyniki.
+
+\TODO {bibliografia wyliczenia}
+
+\TODO {bibliografia, że SVM jest ok do tekstów}
+
+\subsubsection{Kolejna decyzja}
+
+\section{Co należało by poprawić?}
+
+
+
+\appendix
+\chapter{Pierwszy dodatek} 
+
+\begin{thebibliography}{99}
+\addcontentsline{toc}{chapter}{Bibliografia}
+\bibitem{Stevens}{W. R. Stevens, G. R. Wright, ,,Biblia TCP/IP tom 1'', RM, 
+1998.}
+
+\end{thebibliography}
+
+\zakonczenie  % wklejenie recenzji i opinii
+
+\end{document}
+%+++ END +++
