@@ -99,6 +99,8 @@
 
 Od kiedy człowiek zapisuje swoje myśli na świecie utrwalane jest coraz więcej danych. Pisane są listy, książki i krótkie wiadomości. Każdy z tych dzieł ma swojego autora, choć nie zawsze jest on znany. Niemniej dzięki uważnej obserwacji można ustalić kto jest autorem tekstu, jeżeli posiadamy inne do porównania. Pisanie, podobnie jak mowa czy każde działanie, które człowiek podejmuje, jest pod wpływem osobistego zachowania--stylu. Na podstawie sprawdzania stylu można przypisać autorstwo starożytnych tekstów, których autorzy mogli być zmieniani, bądź pominięci, albo odnaleźć autora anonimowego terrorystycznego manifestu. 
 Celem tej pracy jest poruszenie tematu takiego automatycznego rozpoznawania tekstów, które napisane są w języku polskim. Tworzy to specyficzne warunki, w odróżnieniu od np. języka angielskiego. Chciałbym sprawdzić czy i z jaką pewnością można określić autora tekstu dodając go do zbioru kilku znanych autorów.
+
+Opisać organizację pracy
 \TODO powołać się na jakąś bibliografię
 
 
@@ -109,7 +111,7 @@ Pojęciem NLP (ang. Natural Language Processing) określa się zbiór technik ko
 \url{'https://pl.wikipedia.org/wiki/Przetwarzanie_języka_naturalnego'}
 	
 \section{Budowa zdania}
-Tekst składa się ze znaków, tworzących słowa, składających się na zdania. Za Słownikiem Języka Polskiego, to 
+Tekst składa się ze znaków, tworzących słowa, składających się na zdania. Za Słownikiem Języka Polskiego, zdanie to 
 \begin{enumerate}
 	\item «myśl wyrażona słowami»
 	\item "«zespół wyrazów powiązanych zależnościami gramatycznymi i zawierający orzeczenie»"
@@ -187,7 +189,34 @@ In classification, inputs are divided into two or more classes, and the learner 
 \chapter{Przegląd dostępnych rozwiązań}
 
 \section{Rozprawa doktorska z EITI}
-\section{OSA}
+Napisał ziomek tekst i jest spoko.
+
+\section{Jednolity System Antyplagiatowy}
+Jednolity system antyplagiatowy jest w posiadaniu Ministra właściwego do spraw szkolnictwa wyższego, a jego budowa i administracja realizowana jest przez Ośrodek Przetwarzania Informacji - Państwowy Instytut Badawczy pod nadzorem Ministra właściwego do spraw szkolnictwa wyższego. System jest wymaganym elementem sprawdzającym czy praca dyplomowa jest samodzielna: jest plagiatem czy nie. 
+Co ciekawe, autorzy przypominają na każdym kroku, że "Wynik badania antyplagiatowego nie stanowi ostatecznego rozstrzygnięcia czy praca dyplomowa jest plagiatem czy też nie.". 
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\centering
+		\includegraphics[scale=0.35]{\ImgPath/rys/jsa_infograf-01.jpg}
+	\end{center}
+	\caption{Infografika pokazująca proces użycia JSA}
+\end{figure}
+
+System generuje wynik na podstawie płaszczyzn i cech prezentowanych w grupach wg obszarów, których dotyczą: 
+\begin{itemize}
+	\item \textbf{Analiza tekstu} jest pierwszym obszarem sprawdzenia pracy. Polega głównie na sprawdzeniu czy w tekście nie pojawiają się białe znaki i nie zostały wykorzystane inne techniki, mające na celu zaburzyć automatyczne przetworzenie tekstu i jednoczesnej neutralności dla ludzkiego czytelnika. \linebreak 
+	Na te techniki składają się znaki białe, bądź pochodzące z innego języka a graficznie będące podobne do języka pracy. Te techniki zmieniają długości słów, przez co porównania do innych "czystych" tekstów są nieefektywne. Na podstawie porównania rozkładu długości i częstości słów z danymi z Ogólnopolskiego Repozytorium Pisemnych Prac Dyplomowych można znajdować przesłanki, że nastąpiły takie manipulacje. \linebreak
+	Dodatkowo System bada spójność ogólnopojętego stylu tekstu i oczekuje, że co najmniej 70\% tekstu będzie napisana w takim samym stylu. Niestety nie jest udostępnione na jakiej podstawie badany jest styl.
+	  
+	\item \textbf{Procentowy Rozmiar Podobieństwa} jest wskaźnikiem, który pokazuje jak duża część pracy składa się z fragmentów pochodzących z innych tekstów. Proponowane są 4 rozmiary zbiorów porównawczych: dla ciągów słownych nie dłuższych niż 5, 10, 20 i 40 słów. Dodatkowo tworzona jest lista źródeł (w przypadku, gdy fragment zostanie gdzieś odnaleziony).
+	
+\end{itemize}
+
+
+\section{Otwarty System Antyplagiatowy}
+
+
 \section{Bank ING i czytelność dokumentóW}
 \section{Użyte technologie}
 \subsection{Python}
