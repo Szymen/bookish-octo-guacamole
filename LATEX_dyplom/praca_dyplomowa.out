@@ -9,29 +9,30 @@
 \BOOKMARK [1][-]{section.2.7}{Klasyfikacja}{chapter.2}% 9
 \BOOKMARK [0][-]{chapter.3}{Przeglad dostepnych rozwiazan}{}% 10
 \BOOKMARK [1][-]{section.3.1}{Rozprawa doktorska z EITI}{chapter.3}% 11
-\BOOKMARK [1][-]{section.3.2}{OSA}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.3}{Bank ING i czytelnosc dokument\363W}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.4}{Uzyte technologie}{chapter.3}% 14
-\BOOKMARK [2][-]{subsection.3.4.1}{Python}{section.3.4}% 15
-\BOOKMARK [2][-]{subsection.3.4.2}{Biblioteki}{section.3.4}% 16
-\BOOKMARK [0][-]{chapter.4}{Model klasyfikacji}{}% 17
-\BOOKMARK [1][-]{section.4.1}{Warunki}{chapter.4}% 18
-\BOOKMARK [2][-]{subsection.4.1.1}{Ile uzytych tekst\363w/autor\363w}{section.4.1}% 19
-\BOOKMARK [1][-]{section.4.2}{Metody por\363wnywania obiekt\363w}{chapter.4}% 20
-\BOOKMARK [2][-]{subsection.4.2.1}{SVM}{section.4.2}% 21
-\BOOKMARK [1][-]{section.4.3}{Budowa i opis algorytmu}{chapter.4}% 22
-\BOOKMARK [2][-]{subsection.4.3.1}{Przygotowanie danych}{section.4.3}% 23
-\BOOKMARK [2][-]{subsection.4.3.2}{Struktura danych}{section.4.3}% 24
-\BOOKMARK [2][-]{subsection.4.3.3}{Cechy}{section.4.3}% 25
-\BOOKMARK [2][-]{subsection.4.3.4}{Algorytmy uzyte do ekstrakcji cech}{section.4.3}% 26
-\BOOKMARK [2][-]{subsection.4.3.5}{Klasyfikacja}{section.4.3}% 27
-\BOOKMARK [0][-]{chapter.5}{Testy i wyniki}{}% 28
-\BOOKMARK [1][-]{section.5.1}{Przypadki testowe}{chapter.5}% 29
-\BOOKMARK [1][-]{section.5.2}{Cel test\363w}{chapter.5}% 30
-\BOOKMARK [1][-]{section.5.3}{Wyniki}{chapter.5}% 31
-\BOOKMARK [0][-]{chapter.6}{Wyniki}{}% 32
-\BOOKMARK [1][-]{section.6.1}{Czy by\233o warto?}{chapter.6}% 33
-\BOOKMARK [1][-]{section.6.2}{Podjete decyzje}{chapter.6}% 34
-\BOOKMARK [1][-]{section.6.3}{Co naleza\233o by poprawic?}{chapter.6}% 35
-\BOOKMARK [0][-]{appendix.A}{Pierwszy dodatek}{}% 36
-\BOOKMARK [0][-]{appendix*.6}{Bibliografia}{}% 37
+\BOOKMARK [1][-]{section.3.2}{Jednolity System Antyplagiatowy}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.3}{Otwarty System Antyplagiatowy}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.4}{Bank ING i czytelnosc dokument\363W}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.5}{Uzyte technologie}{chapter.3}% 15
+\BOOKMARK [2][-]{subsection.3.5.1}{Python}{section.3.5}% 16
+\BOOKMARK [2][-]{subsection.3.5.2}{Biblioteki}{section.3.5}% 17
+\BOOKMARK [0][-]{chapter.4}{Model klasyfikacji}{}% 18
+\BOOKMARK [1][-]{section.4.1}{Warunki}{chapter.4}% 19
+\BOOKMARK [2][-]{subsection.4.1.1}{Ile uzytych tekst\363w/autor\363w}{section.4.1}% 20
+\BOOKMARK [1][-]{section.4.2}{Metody por\363wnywania obiekt\363w}{chapter.4}% 21
+\BOOKMARK [2][-]{subsection.4.2.1}{SVM}{section.4.2}% 22
+\BOOKMARK [1][-]{section.4.3}{Budowa i opis algorytmu}{chapter.4}% 23
+\BOOKMARK [2][-]{subsection.4.3.1}{Przygotowanie danych}{section.4.3}% 24
+\BOOKMARK [2][-]{subsection.4.3.2}{Struktura danych}{section.4.3}% 25
+\BOOKMARK [2][-]{subsection.4.3.3}{Cechy}{section.4.3}% 26
+\BOOKMARK [2][-]{subsection.4.3.4}{Algorytmy uzyte do ekstrakcji cech}{section.4.3}% 27
+\BOOKMARK [2][-]{subsection.4.3.5}{Klasyfikacja}{section.4.3}% 28
+\BOOKMARK [0][-]{chapter.5}{Testy i wyniki}{}% 29
+\BOOKMARK [1][-]{section.5.1}{Przypadki testowe}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.2}{Cel test\363w}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.3}{Wyniki}{chapter.5}% 32
+\BOOKMARK [0][-]{chapter.6}{Wyniki}{}% 33
+\BOOKMARK [1][-]{section.6.1}{Czy by\233o warto?}{chapter.6}% 34
+\BOOKMARK [1][-]{section.6.2}{Podjete decyzje}{chapter.6}% 35
+\BOOKMARK [1][-]{section.6.3}{Co naleza\233o by poprawic?}{chapter.6}% 36
+\BOOKMARK [0][-]{appendix.A}{Pierwszy dodatek}{}% 37
+\BOOKMARK [0][-]{appendix*.6}{Bibliografia}{}% 38
